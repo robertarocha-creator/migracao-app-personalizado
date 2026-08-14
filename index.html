@@ -86,6 +86,8 @@ h3{font-size:clamp(18px,2vw,21px);}
 .next-section{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--texto-mudo);transition:color .2s;}
 .next-section:hover{color:var(--azul-escuro);}
 .next-section span{border-bottom:1px dashed #C0CAD6;}
+.next-section-inline{color:var(--azul-escuro);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+.next-section-inline:hover{color:var(--azul-petroleo);}
 
 /* ── HERO ─────────────────────────────── */
 .hero{position:relative;overflow:hidden;padding-top:96px;padding-bottom:56px;background:var(--fundo-suave);}
@@ -196,14 +198,11 @@ h3{font-size:clamp(18px,2vw,21px);}
         </div>
         <h1>Seu aplicativo está pronto para ser atualizado</h1>
         <p>O Nibo preparou uma nova versão do aplicativo, com <strong>interface mais personalizada</strong> e a funcionalidade de <strong>Arquivo Permanente</strong>, para guardar os documentos mais importantes da empresa do seu cliente.</p>
-        <p>Para publicá-la dependemos de uma ação sua. Veja como liberar a versão.</p>
+        <p>Para publicá-la dependemos de uma ação sua. <a href="#atualizar" class="next-section-inline">Veja como liberar a versão.</a></p>
 
         <div class="hero-cta-stack">
           <a href="#opcoes" class="button primary">
             Atualizar meu aplicativo <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <a href="#atualizar" class="next-section">
-            <span>Veja como liberar a atualização</span> <i class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
       </div>
@@ -219,8 +218,8 @@ h3{font-size:clamp(18px,2vw,21px);}
     <div class="container">
       <div class="action-grid">
         <div class="section-intro">
-          <h2>Agora é com você</h2>
-          <h3 style="margin-bottom:10px;">O que você precisa fazer?</h3>
+          <span class="eyebrow">Agora é com você</span>
+          <h2>O que você precisa fazer?</h2>
           <p>Para publicar as próximas versões do seu aplicativo, o Google exige que você crie uma <strong>conta de desenvolvedor</strong> da sua empresa.</p>
           <p>A criação dessa conta possui uma taxa única de <strong>US$ 25</strong>, cobrada diretamente pelo Google.</p>
           <p>Depois disso, <strong>o Nibo cuida de toda a atualização e publicação</strong> do seu aplicativo.</p>
@@ -269,13 +268,12 @@ h3{font-size:clamp(18px,2vw,21px);}
           <article class="option-card">
             <div class="option-icon"><i class="fa-solid fa-headset"></i></div>
             <h3>Quero ajuda do Nibo</h3>
-            <p id="cs-texto">Agende um especialista para realizar esse processo junto com você.</p>
+            <p>Agende um horário com um especialista do Nibo para realizar esse processo junto com você.</p>
             <a href="#" id="cs-agenda" class="button outline" target="_blank" rel="noopener noreferrer">
-              <span id="cs-button-text">Agendar especialista</span> <i class="fa-solid fa-arrow-right"></i>
+              Agendar agora <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
         </div>
-        <p class="microcopy">O pagamento de US$ 25 é realizado diretamente ao Google.</p>
       </div>
     </div>
   </section>
@@ -297,46 +295,33 @@ h3{font-size:clamp(18px,2vw,21px);}
 </a>
 
 <!--
-  Personalização por CS via ?cs=identificador
-  Fonte dos dados: planilha "CS_responsavel_e_agenda.xlsx" (7 CSs
-  confirmados por Roberta: Camille, Denis, Larissa, Lorrayne,
-  Micaelle, Sabrina, Sthephany). Não busca a planilha em produção —
-  os dados já estão gravados abaixo.
-
-  Observação: o campo "genero" (usado só para "seu"/"sua" especialista
-  no texto) não veio da planilha — inferi pelo primeiro nome. Único
-  caso não-óbvio é Denis (m); os demais são nomes tipicamente
-  femininos no PT-BR. Vale uma conferência rápida.
+  ?cs=identificador só define o href do botão "Agendar agora".
+  Não altera mais nenhum texto da interface com base no nome do CS.
+  Fonte dos links: mapeamento fornecido por Roberta (8 CSs).
 -->
 <script>
 (function () {
   var csData = {
-    camille:   { nome: "Camille",   nomeCompleto: "Camille Vaz",       genero: "f", agenda: "https://meetings.hubspot.com/camille-vaz" },
-    denis:     { nome: "Denis",     nomeCompleto: "Denis Silva",       genero: "m", agenda: "https://meetings.hubspot.com/denis-silva3" },
-    larissa:   { nome: "Larissa",   nomeCompleto: "Larissa Teixeira",  genero: "f", agenda: "https://meetings.hubspot.com/larissa-teixeira" },
-    lorrayne:  { nome: "Lorrayne",  nomeCompleto: "Lorrayne Moreira",  genero: "f", agenda: "https://meetings.hubspot.com/lorrayne-moreira" },
-    micaelle:  { nome: "Micaelle",  nomeCompleto: "Micaelle Martins",  genero: "f", agenda: "https://meetings.hubspot.com/micaelle-martins" },
-    sabrina:   { nome: "Sabrina",   nomeCompleto: "Sabrina Corrêa",    genero: "f", agenda: "https://meetings.hubspot.com/sabrina-correa" },
-    sthephany: { nome: "Sthephany", nomeCompleto: "Sthephany Talasca", genero: "f", agenda: "https://meetings.hubspot.com/sthephany-talasca" }
+    bryan:     { agenda: "https://meetings.hubspot.com/bryan-silveira-dos-santos" },
+    debora:    { agenda: "https://meetings.hubspot.com/debora-rezende" },
+    isaque:    { agenda: "https://meetings.hubspot.com/isaque-ramos-da-silva" },
+    nataly:    { agenda: "https://meetings.hubspot.com/nataly-vieira" },
+    nathalia:  { agenda: "https://meetings.hubspot.com/nathalia-nascimento3" },
+    raquel:    { agenda: "https://meetings.hubspot.com/raquel-goncalves-do-carmo" },
+    caleb:     { agenda: "https://meetings.hubspot.com/caleb-ximenes" },
+    isadora:   { agenda: "https://meetings.hubspot.com/isadora-bernardes" }
   };
 
   var params = new URLSearchParams(window.location.search);
   var csId = (params.get('cs') || '').trim().toLowerCase();
   var cs = csData[csId];
 
-  var textoEl = document.getElementById('cs-texto');
   var agendaEl = document.getElementById('cs-agenda');
-  var buttonTextEl = document.getElementById('cs-button-text');
 
   if (cs && cs.agenda) {
-    var pronome = cs.genero === 'f' ? 'sua' : 'seu';
-    textoEl.innerHTML = 'Agende um horário com <strong>' + cs.nome + '</strong>, ' + pronome + ' especialista do Nibo, para realizar esse processo junto com você.';
-    buttonTextEl.textContent = 'Agendar com ' + cs.nome;
     agendaEl.href = cs.agenda;
   } else {
-    // Sem cs válido: nada muda visualmente (texto e botão continuam os
-    // padrões da página). Só ao clicar é que avisamos a pessoa —
-    // não navega pra lugar nenhum, não quebra a página.
+    // Sem cs válido ou inválido: não redireciona para nenhuma agenda.
     agendaEl.addEventListener('click', function (e) {
       e.preventDefault();
       window.alert('Acesse esta página pelo link enviado pelo Nibo para encontrar seu CS responsável.');
