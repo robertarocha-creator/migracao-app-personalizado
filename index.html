@@ -7,6 +7,24 @@
 <meta name="description" content="A nova versão do seu aplicativo personalizado já está disponível. Veja como atualizar.">
 <link rel="icon" type="image/png" href="./favicon.png">
 
+<!--
+  Microsoft Clarity — grava sessões/heatmaps de uso da página.
+  Substituir SEU_PROJECT_ID pelo ID do seu projeto em clarity.microsoft.com
+  (Configurações > Setup > Installation > Project ID).
+  Passo a passo:
+  1. Acesse https://clarity.microsoft.com e faça login com conta Microsoft
+  2. Crie um projeto novo (ou use um existente) apontando pra este domínio
+  3. Copie o "Project ID" (uma string curta, tipo "abc1de2fgh")
+  4. Cole no lugar de SEU_PROJECT_ID abaixo
+-->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "SEU_PROJECT_ID");
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -222,7 +240,7 @@ h3{font-size:clamp(18px,2vw,21px);}
           <h2>O que você precisa fazer?</h2>
           <p>Para publicar as próximas versões do seu aplicativo, o Google exige que você crie uma <strong>conta de desenvolvedor da sua empresa.</strong></p>
           <p>A criação dessa conta possui uma <strong>taxa única de US$ 25</strong>, cobrada diretamente pelo Google.</p>
-          <p>Depois disso, <strong>o Nibo cuida de toda a atualização e publicação</strong> do seu aplicativo.</p>
+          <p>Depois disso, o Nibo cuida de toda a atualização e publicação do seu aplicativo.</p>
         </div>
 
         <!-- caixinha lateral existente, reaproveitada como passo a passo -->
